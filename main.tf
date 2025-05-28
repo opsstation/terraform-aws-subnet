@@ -53,7 +53,7 @@ resource "aws_subnet" "public" {
   enable_resource_name_dns_a_record_on_launch    = !var.public_subnet_ipv6_native && var.public_subnet_enable_resource_name_dns_a_record_on_launch
   enable_dns64                                   = var.enable_ipv6 && var.public_subnet_enable_dns64
   tags = merge(
-    module.public-labels.tags, var.extra_public_tags,
+    module.public-labels.tags, var.extra_public_tags, var.tags,
     {
       "Name" = format("%s%s%s", module.public-labels.id, var.delimiter, element(var.availability_zones, count.index))
       "AZ"   = element(var.availability_zones, count.index)
@@ -204,6 +204,7 @@ resource "aws_subnet" "private" {
       "Name" = format("%s%s%s", module.private-labels.id, var.delimiter, element(var.availability_zones, count.index))
       "AZ"   = element(var.availability_zones, count.index)
     },
+    var.extra_private_tags,
     var.tags
   )
 

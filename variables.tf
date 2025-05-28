@@ -15,11 +15,7 @@ variable "environment" {
   description = "Environment (e.g. `prod`, `dev`, `staging`)."
 }
 
-variable "extra_public_tags" {
-  type        = map(any)
-  default     = {}
-  description = "Additional tags (e.g. map(`BusinessUnit`,`XYZ`)."
-}
+
 
 variable "label_order" {
   type        = list(any)
@@ -372,4 +368,16 @@ variable "public_rt_ipv6_destination_cidr" {
   type        = string
   default     = "::/0"
   description = "The destination ipv6 CIDR block."
+}
+
+variable "extra_public_tags" {
+  type        = map(any)
+  default     = {}
+  description = "Additional tags (e.g. map(`BusinessUnit`,`XYZ`)."
+}
+
+variable "extra_private_tags" {
+  type        = map(any)
+  default     = {}
+  description = "Additional private subnet tags."
 }

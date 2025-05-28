@@ -158,6 +158,7 @@ This project is licensed under the **MIT** License - see the [LICENSE](https://g
 | <a name="input_enable_private_acl"></a> [enable\_private\_acl](#input\_enable\_private\_acl) | Set to false to prevent the module from creating any resources. | `bool` | `true` | no |
 | <a name="input_enable_public_acl"></a> [enable\_public\_acl](#input\_enable\_public\_acl) | Set to false to prevent the module from creating any resources. | `bool` | `true` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | Environment (e.g. `prod`, `dev`, `staging`). | `string` | `""` | no |
+| <a name="input_extra_private_tags"></a> [extra\_private\_tags](#input\_extra\_private\_tags) | Additional private subnet tags. | `map(any)` | `{}` | no |
 | <a name="input_extra_public_tags"></a> [extra\_public\_tags](#input\_extra\_public\_tags) | Additional tags (e.g. map(`BusinessUnit`,`XYZ`). | `map(any)` | `{}` | no |
 | <a name="input_flow_log_destination_arn"></a> [flow\_log\_destination\_arn](#input\_flow\_log\_destination\_arn) | ARN of resource in which flow log will be sent. | `string` | `null` | no |
 | <a name="input_flow_log_destination_type"></a> [flow\_log\_destination\_type](#input\_flow\_log\_destination\_type) | Type of flow log destination. Can be s3 or cloud-watch-logs | `string` | `"cloud-watch-logs"` | no |
