@@ -1,4 +1,4 @@
-# 🏗️ Terraform-aws-subnet
+# 🏗️ Terraform-AWS-Subnet
 
 [![OpsStation](https://img.shields.io/badge/Made%20by-OpsStation-blue?style=flat-square&logo=terraform)](https://www.opsstation.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -136,6 +136,7 @@ module "subnet" {
 
 ### 💙 Maintained by [OpsStation](https://www.opsstation.com)
 > OpsStation — Simplifying Cloud, Securing Scale.
+
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
