@@ -10,7 +10,7 @@ locals {
 ## Labels module called that will be used for naming and tags.
 ##-----------------------------------------------------------------------------
 module "private-labels" {
-  source      = "git::https://github.com/OpsStation/terraform-multicloud-labels.git"
+  source      = "git::https://github.com/OpsStation/terraform-multicloud-labels.git?ref=v1.0.0"
   name        = "payment-api"
   environment = "prod"
   repository  = "terraform-multicloud-labels"
@@ -24,7 +24,7 @@ module "private-labels" {
 
 
 module "public-labels" {
-  source      = "git::https://github.com/OpsStation/terraform-multicloud-labels.git"
+  source      = "git::https://github.com/OpsStation/terraform-multicloud-labels.git?ref=v1.0.0"
   name        = "payment-api"
   environment = "prod"
   repository  = "terraform-multicloud-labels"

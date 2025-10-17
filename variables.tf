@@ -1,33 +1,33 @@
-variable "name" {
-  type        = string
-  default     = ""
-  description = "Name  (e.g. `prod-subnet` or `subnet`)."
-}
-
-variable "repository" {
-  type        = string
-  default     = "https://github.com/opsstation/terraform-aws-subnet"
-  description = "Terraform current module repo"
-}
-variable "environment" {
-  type        = string
-  default     = ""
-  description = "Environment (e.g. `prod`, `dev`, `staging`)."
-}
-
-
-
-variable "label_order" {
-  type        = list(any)
-  default     = ["name", "environment"]
-  description = "Label order, e.g. `name`,`Environment`."
-}
-
-variable "attributes" {
-  type        = list(any)
-  default     = []
-  description = "Additional attributes (e.g. `1`)."
-}
+#variable "name" {
+#  type        = string
+#  default     = ""
+#  description = "Name  (e.g. `prod-subnet` or `subnet`)."
+#}
+#
+#variable "repository" {
+#  type        = string
+#  default     = "https://github.com/opsstation/terraform-aws-subnet"
+#  description = "Terraform current module repo"
+#}
+#variable "environment" {
+#  type        = string
+#  default     = ""
+#  description = "Environment (e.g. `prod`, `dev`, `staging`)."
+#}
+#
+#
+#
+#variable "label_order" {
+#  type        = list(any)
+#  default     = ["name", "environment"]
+#  description = "Label order, e.g. `name`,`Environment`."
+#}
+#
+#variable "attributes" {
+#  type        = list(any)
+#  default     = []
+#  description = "Additional attributes (e.g. `1`)."
+#}
 
 variable "delimiter" {
   type        = string
@@ -41,11 +41,11 @@ variable "tags" {
   description = "Additional tags (e.g. map(`BusinessUnit`,`XYZ`)."
 }
 
-variable "managedby" {
-  type        = string
-  default     = ""
-  description = "ManagedBy, eg 'OpsStation'."
-}
+#variable "managedby" {
+#  type        = string
+#  default     = ""
+#  description = "ManagedBy, eg 'OpsStation'."
+#}
 
 variable "availability_zones" {
   type        = list(string)
