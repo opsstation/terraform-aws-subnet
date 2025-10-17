@@ -10,35 +10,37 @@ locals {
 ## Labels module called that will be used for naming and tags.
 ##-----------------------------------------------------------------------------
 module "private-labels" {
-  source      = "git::https://github.com/opsstation/terraform-aws-labels.git?ref=v1.0.0"
-  name        = var.name
-  repository  = var.repository
-  environment = var.environment
-  managedby   = var.managedby
-  label_order = var.label_order
-  attributes  = compact(concat(var.attributes, ["private"]))
+  source      = "git::https://github.com/OpsStation/terraform-multicloud-labels.git"
+  name        = "payment-api"
+  environment = "prod"
+  repository  = "terraform-multicloud-labels"
+  attributes  = ["v2"]
+
   extra_tags = {
-    Type = "private"
+    Owner      = "Sohan"
+    CostCenter = "Finance"
   }
 }
+
 
 module "public-labels" {
-  source = "git::https://github.com/opsstation/terraform-aws-labels.git?ref=v1.0.0"
+  source      = "git::https://github.com/OpsStation/terraform-multicloud-labels.git"
+  name        = "payment-api"
+  environment = "prod"
+  repository  = "terraform-multicloud-labels"
+  attributes  = ["v2"]
 
-  name        = var.name
-  repository  = var.repository
-  environment = var.environment
-  managedby   = var.managedby
-  label_order = var.label_order
-  attributes  = compact(concat(var.attributes, ["public"]))
   extra_tags = {
-    Type = "public"
+    Owner      = "Sohan"
+    CostCenter = "Finance"
   }
 }
+
+
 
 ##-----------------------------------------------------------------------------
 ## Below resource will deploy public subnets and its related components in aws environment.
-##-----------------------------------------------------------------------------
+##--------- --------------------------------------------------------------------
 resource "aws_subnet" "public" {
   count                                          = local.public_count
   vpc_id                                         = var.vpc_id

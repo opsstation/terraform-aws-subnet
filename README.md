@@ -104,21 +104,21 @@ This project is licensed under the **MIT** License - see the [LICENSE](https://g
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=  1.4.6 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.9.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.13.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 6.13.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.9.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 6.13.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_private-labels"></a> [private-labels](#module\_private-labels) | git::https://github.com/opsstation/terraform-aws-labels.git | v1.0.0 |
-| <a name="module_public-labels"></a> [public-labels](#module\_public-labels) | git::https://github.com/opsstation/terraform-aws-labels.git | v1.0.0 |
+| <a name="module_private-labels"></a> [private-labels](#module\_private-labels) | git::https://github.com/OpsStation/terraform-multicloud-labels.git | n/a |
+| <a name="module_public-labels"></a> [public-labels](#module\_public-labels) | git::https://github.com/OpsStation/terraform-multicloud-labels.git | n/a |
 
 ## Resources
 

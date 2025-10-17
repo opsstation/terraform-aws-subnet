@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "ap-south-1"
+  region = "ca-central-1"
 }
 
 ##-----------------------------------------------------------------------------
@@ -23,7 +23,7 @@ module "subnets" {
   name                                           = "app"
   environment                                    = "test"
   nat_gateway_enabled                            = true
-  availability_zones                             = ["ap-south-1a", "ap-south-1b"]
+  availability_zones                             = ["ca-central-1a", "ca-central-1b"]
   vpc_id                                         = module.vpc.id
   type                                           = "public-private"
   igw_id                                         = module.vpc.igw_id

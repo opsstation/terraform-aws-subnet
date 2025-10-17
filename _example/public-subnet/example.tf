@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "eu-west-1"
+  region = "ca-central-1"
 }
 
 
@@ -26,7 +26,7 @@ module "subnet" {
   source             = "./../.."
   name               = "app"
   environment        = "test"
-  availability_zones = ["us-east-1a", "us-east-1b", "us-east-1c"]
+  availability_zones = ["ca-central-1a", "ca-central-1b", "ca-central-1d"]
   vpc_id             = module.vpc.id
   type               = "public"
   igw_id             = module.vpc.igw_id
