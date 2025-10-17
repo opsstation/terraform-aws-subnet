@@ -1,20 +1,41 @@
-# Terraform-aws-subnet
-# Terraform AWS Cloud Subnet Modules
-## Table of Contents
+# 🏗️ Terraform-AWS-Subnet
 
-- [Introduction](#introduction)
-- [Usage](#usage)
-- [License](#license)
-- [Inputs](#inputs)
-- [Outputs](#outputs)
+[![OpsStation](https://img.shields.io/badge/Made%20by-OpsStation-blue?style=flat-square&logo=terraform)](https://www.opsstation.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Terraform](https://img.shields.io/badge/Terraform-1.13%2B-purple.svg?logo=terraform)](#)
+[![CI](https://github.com/OpsStation/terraform-multicloud-labels/actions/workflows/ci.yml/badge.svg)](https://github.com/OpsStation/terraform-multicloud-labels/actions/workflows/ci.yml)
+
+> 🌩️ **A production-grade, reusable AWS Subnet module by [OpsStation](https://www.opsstation.com)**
+> Designed for reliability, performance, and security — following AWS networking best practices.
+---
+
+## 🏢 About OpsStation
+
+**OpsStation** delivers **Cloud & DevOps excellence** for modern teams:
+- 🚀 **Infrastructure Automation** with Terraform, Ansible & Kubernetes
+- 💰 **Cost Optimization** via scaling & right-sizing
+- 🛡️ **Security & Compliance** baked into CI/CD pipelines
+- ⚙️ **Fully Managed Operations** across AWS, Azure, and GCP
+
+> 💡 Need enterprise-grade DevOps automation?
+> 👉 Visit [**www.opsstation.com**](https://www.opsstation.com) or email **hello@opsstation.com**
+
+---
+
+## 🌟 Features
+
+- ✅ Creates **Public**, **Private**, and **Database** subnets
+- ✅ Supports **multiple Availability Zones** and **custom CIDR blocks**
+- ✅ Automatic **route table association** for each subnet type
+- ✅ Optional **NAT Gateway** support for private subnets
+- ✅ Compatible with **VPC Flow Logs** for enhanced network visibility
+- ✅ Tags and naming convention managed through the **Labels module**
+- ✅ Seamless integration with other OpsStation Terraform modules
+
+---
 
 
-## Introduction
-This Terraform module creates AWS subnet along with additional configuration options.
-
-## Usage
-To use this module, include it in your Terraform configuration file and provide the required input variables. Below is an example of how to use the module:
-# Examples:
+## ⚙️ Usage Example
 # Example: private-subnet
 
 ```hcl
@@ -89,18 +110,29 @@ module "subnet" {
 ```
 
 
+### ☁️ Outputs (AWS Subnet Module)
 
-## Examples
-For detailed examples on how to use this module, please refer to the [Examples](https://github.com/opsstation/terraform-aws-subnet/tree/master/_example) directory within this repository.
+| Name                        | Description                                                        |
+|-----------------------------|--------------------------------------------------------------------|
+| `public_subnet_ids`         | The IDs of the created **Public Subnets**.                          |
+| `private_subnet_ids`        | The IDs of the created **Private Subnets**.                         |
+| `database_subnet_ids`       | The IDs of the created **Database Subnets**.                        |
+| `public_route_table_ids`    | The IDs of the Route Tables associated with **Public Subnets**.     |
+| `private_route_table_ids`   | The IDs of the Route Tables associated with **Private Subnets**.    |
+| `database_route_table_ids`  | The IDs of the Route Tables associated with **Database Subnets**.   |
+| `public_subnet_arns`        | The ARNs of the created **Public Subnets**.                         |
+| `private_subnet_arns`       | The ARNs of the created **Private Subnets**.                        |
+| `database_subnet_arns`      | The ARNs of the created **Database Subnets**.                       |
+| `availability_zones`        | The list of Availability Zones used to create the subnets.          |
+| `tags`                      | A mapping of tags assigned to the subnet resources.                |
 
-## Author
-Your Name Replace **MIT** and **opsstation** with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
+### ☁️ Tag Normalization Rules (AWS)
 
-## License
-This project is licensed under the **MIT** License - see the [LICENSE](https://github.com/opsstation/terraform-aws-subnet/blob/master/LICENSE) file for details.
+| Cloud | Case      | Allowed Characters | Example                            |
+|--------|-----------|------------------|------------------------------------|
+| **AWS** | TitleCase | Any              | `Name`, `Environment`, `CostCenter` |
 
-<!-- BEGIN_TF_DOCS -->
-## Requirements
+---
 
 | Name | Version |
 |------|---------|
@@ -222,4 +254,6 @@ This project is licensed under the **MIT** License - see the [LICENSE](https://g
 | <a name="output_public_subnet_cidrs_ipv6"></a> [public\_subnet\_cidrs\_ipv6](#output\_public\_subnet\_cidrs\_ipv6) | CIDR blocks of the created public subnets. |
 | <a name="output_public_subnet_id"></a> [public\_subnet\_id](#output\_public\_subnet\_id) | The ID of the subnet. |
 | <a name="output_public_tags"></a> [public\_tags](#output\_public\_tags) | A mapping of public tags to assign to the resource. |
-<!-- END_TF_DOCS -->
+
+### 💙 Maintained by [OpsStation](https://www.opsstation.com)
+> OpsStation — Simplifying Cloud, Securing Scale.
